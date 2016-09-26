@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/when_message"
+        android:text="@string/select_when_text"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <DatePicker
+        android:id="@+id/select_start_date"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/when_message"
+        android:layout_marginTop="40dp" >
+    </DatePicker>
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/tmp_button"
+        app:bootstrapText=" START  {fa_bolt}"
+        app:bootstrapBrand="primary"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/select_start_date"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        />
+
+</RelativeLayout>

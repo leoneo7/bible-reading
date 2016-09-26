@@ -1,3 +1,35 @@
 <resources>
     <string name="app_name">BibleReading</string>
+
+    <string name="select_book_text">好きな方を選んでください</string>
+    <string name="bible_new_only">新約聖書のみ</string>
+    <string name="bible_old_new">旧約 + 新約</string>
+
+    <string name="select_target_text">一日に何章読みますか？</string>
+    <string name="take_days_first">そのペースだと\n</string>
+    <string name="take_days_last">日かかります</string>
+    <string name="please_set_target">目標を設定してください</string>
+    <string name="next_button">Next</string>
+
+    <string name="select_when_text">いつから読み始めますか？</string>
+    <string name="start_button">Start!</string>
+
+    <string name="weekly_progress">今週の達成率</string>
+    <string name="daily_progress">今日の進捗</string>
+    <string name="save_button">保存</string>
+    <string name="achieve_button">達成!</string>
+
+    <string name="drawer_open">開く</string>
+    <string name="drawer_close">閉じる</string>
+
+    <string name="menu_home">ホーム</string>
+    <string name="menu_profile">プロフィール</string>
+    <string name="menu_history">過去ログ</string>
+    <string name="menu_ranking">ランキング</string>
+    <string name="menu_notification">お知らせ</string>
+    <string name="menu_about">このアプリについて</string>
+    <string name="menu_help">ヘルプ</string>
+    <string name="menu_settings">設定</string>
+
+    <string name="zero">0</string>
 </resources>

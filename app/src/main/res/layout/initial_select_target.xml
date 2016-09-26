@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/target_message"
+        android:text="@string/select_target_text"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"/>
+
+    <SeekBar
+        android:id="@+id/target_progress"
+        android:max="50"
+        android:progress="5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/target_message"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:id="@+id/seekbar_number"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/target_progress"
+        android:layout_marginTop="50dp"/>
+
+    <TextView
+        android:id="@+id/take_days_text"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/seekbar_number"
+        android:layout_marginTop="50dp"/>
+
+    <com.beardedhen.androidbootstrap.BootstrapButton
+        android:id="@+id/next_button"
+        app:bootstrapText=" NEXT  {fa_caret-right}"
+        app:bootstrapBrand="primary"
+        app:bootstrapSize="lg"
+        app:buttonMode="regular"
+        app:showOutline="false"
+        app:roundedCorners="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/take_days_text"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="30dp"
+        />
+
+</RelativeLayout>
