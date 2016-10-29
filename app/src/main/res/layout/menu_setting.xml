@@ -1,8 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/tool_bar"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:minHeight="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/title"
+            android:text="@string/setting_title"
+            android:textSize="22sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tool_bar"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"/>
+
+        <com.beardedhen.androidbootstrap.BootstrapButton
+            android:id="@+id/restart_button"
+            app:bootstrapText=" 初めから再設定する {fa_refresh}"
+            app:bootstrapBrand="primary"
+            app:bootstrapSize="lg"
+            app:buttonMode="regular"
+            app:showOutline="false"
+            app:roundedCorners="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/title"
+            android:layout_marginTop="80dp"
+            />
+
+    </RelativeLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="240dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/drawer" />
+
+</android.support.v4.widget.DrawerLayout>

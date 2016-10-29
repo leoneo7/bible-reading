@@ -18,9 +18,33 @@
     <string name="daily_progress">今日の進捗</string>
     <string name="save_button">保存</string>
     <string name="achieve_button">達成!</string>
+    <string name="already_saved">今日の分はすでに登録されています。上書きしますか？</string>
 
-    <string name="drawer_open">開く</string>
-    <string name="drawer_close">閉じる</string>
+    <string name="notFoundSprint">その日付のスプリントが見つかりません</string>
+
+    <string name="about_app_title">このアプリについて</string>
+    <string name="purpose_title">目的</string>
+    <string name="purpose_text">このアプリは毎日頑張って聖書を読もうとする人を応援するためのアプリです。</string>
+    <string name="usage_title">使い方</string>
+    <string name="usage_text">
+        初めに一日の目標章数と始める日付を設定していただきました。\n
+        区切り(スプリント)として一週間が定められており、そのスプリント目標を達成するべく毎日読んだ章数を記録していきます。\n
+        今までの記録は「過去ログ」から一覧で見ることができ、スプリントごとに表示をしています。\n
+        読んだ分だけ経験値がもらえレベルアップしていきます。連続でサボらずに達成するといいこともあるかもしれません。\n
+        設定画面から最初からやり直すこともできます。
+    </string>
+    <string name="future_title">今後の機能予定</string>
+    <string name="future_text">
+        ・LINEやTwitterで友達や家族に気軽にシェアできる\n
+        ・世界中のユーザーと聖書を読んだ章数で競い合うランキング機能\n
+        ・読んでいる箇所を登録できる\n
+        ・最近読んだ箇所に関するクイズを出題\n
+        等様々に考えていますが、続けて開発できるかは皆さんからのフィードバック次第でもあります。\n
+        ぜひGoogle Play Storeからのレビューをお願いします！
+    </string>
+
+    <string name="setting_title">設定</string>
+    <string name="restart_confirm">本当に最初からやり直しますか？</string>
 
     <string name="menu_home">ホーム</string>
     <string name="menu_profile">プロフィール</string>

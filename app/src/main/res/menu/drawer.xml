@@ -7,33 +7,41 @@
             android:id="@+id/menu_home"
             android:icon="@android:drawable/ic_menu_more"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/menu_profile"
-            android:icon="@android:drawable/ic_menu_info_details"
-            android:title="@string/menu_profile" />
+        <!--<item-->
+            <!--android:id="@+id/menu_profile"-->
+            <!--android:icon="@android:drawable/ic_menu_info_details"-->
+            <!--android:title="@string/menu_profile" />-->
         <item
             android:id="@+id/menu_history"
             android:icon="@android:drawable/ic_menu_save"
             android:title="@string/menu_history" />
         <item
-            android:id="@+id/menu_ranking"
-            android:icon="@android:drawable/ic_menu_gallery"
-            android:title="@string/menu_ranking" />
-    </group>
-    <group
-        android:id="@+id/menu_other"
-        android:checkableBehavior="single">
-        <item
-            android:id="@+id/menu_notification"
-            android:title="@string/menu_notification" />
-        <item
             android:id="@+id/menu_about"
+            android:icon="@android:drawable/ic_menu_info_details"
             android:title="@string/menu_about" />
         <item
-            android:id="@+id/menu_help"
-            android:title="@string/menu_help" />
-        <item
             android:id="@+id/menu_setting"
+            android:icon="@android:drawable/ic_menu_manage"
             android:title="@string/menu_settings" />
+        <!--<item-->
+            <!--android:id="@+id/menu_ranking"-->
+            <!--android:icon="@android:drawable/ic_menu_gallery"-->
+            <!--android:title="@string/menu_ranking" />-->
     </group>
+    <!--<group-->
+        <!--android:id="@+id/menu_other"-->
+        <!--android:checkableBehavior="single">-->
+        <!--<item-->
+            <!--android:id="@+id/menu_notification"-->
+            <!--android:title="@string/menu_notification" />-->
+        <!--<item-->
+            <!--android:id="@+id/menu_about"-->
+            <!--android:title="@string/menu_about" />-->
+        <!--<item-->
+            <!--android:id="@+id/menu_help"-->
+            <!--android:title="@string/menu_help" />-->
+        <!--<item-->
+            <!--android:id="@+id/menu_setting"-->
+            <!--android:title="@string/menu_settings" />-->
+    <!--</group>-->
 </menu>

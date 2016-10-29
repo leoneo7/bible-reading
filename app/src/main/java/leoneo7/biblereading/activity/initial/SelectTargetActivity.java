@@ -47,11 +47,12 @@ public class SelectTargetActivity extends Activity {
     }
 
     @OnClick(R.id.next_button)
-    public void startButtonClicked() {
+    public void nextButtonClicked() {
         if (mSeekBar.getProgress() == 0) {
             return;
         } else {
             mUser.setTargetChapter(this, mSeekBar.getProgress());
+            mUser.setDoneChapters(this, 0);
         }
         Intent intent = new Intent(this, SelectWhenActivity.class);
         startActivity(intent);

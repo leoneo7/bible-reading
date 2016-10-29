@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="leoneo7.biblereading">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,11 +21,21 @@
         <activity android:name=".activity.initial.SelectTargetActivity"></activity>
         <activity android:name=".activity.initial.SelectWhenActivity"></activity>
         <activity android:name=".activity.main.ProgressActivity"></activity>
+        <activity android:name=".activity.main.ProfileActivity"></activity>
         <activity android:name=".activity.main.HistoryActivity"></activity>
-        <activity android:name=".activity.menu.NotificationActivity"></activity>
+        <!--<activity android:name=".activity.menu.NotificationActivity"></activity>-->
         <activity android:name=".activity.menu.AboutAppActivity"></activity>
-        <activity android:name=".activity.menu.HelpActivity"></activity>
+        <!--<activity android:name=".activity.menu.HelpActivity"></activity>-->
         <activity android:name=".activity.menu.SettingActivity"></activity>
+
+        <receiver
+            android:name=".helper.AlarmReceiver" android:process=":remote"
+            android:permission="android.permission.RECEIVE_BOOT_COMPLETED">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.PACKAGE_REPLACED"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

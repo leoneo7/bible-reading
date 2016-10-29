@@ -27,7 +27,7 @@
     </DatePicker>
 
     <com.beardedhen.androidbootstrap.BootstrapButton
-        android:id="@+id/tmp_button"
+        android:id="@+id/start_button"
         app:bootstrapText=" START  {fa_bolt}"
         app:bootstrapBrand="primary"
         app:bootstrapSize="lg"

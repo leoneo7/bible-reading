@@ -3,6 +3,7 @@ package leoneo7.biblereading;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
+import android.util.Log;
 
 import java.util.Calendar;
 import java.util.Random;
@@ -25,9 +26,12 @@ public class UserPref {
     private static final String TARGET_CHAPTER = "target_chapter";
     private static final String TAKE_DAYS = "take_days";
     private static final String START_DATE = "start_date";
+    private static final String CURRENT_SPRINT_ID = "current_sprint_id";
     private static final String LEVEL = "level";
     private static final String EXP = "exp";
+    private static final String DONE_CHAPTERS = "done_chapters";
     private static final String RUNNING_DAYS = "running_days";
+    private static final String IS_STARTED = "is_started";
 
     public void setUserName(Context context, String userName) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
@@ -67,7 +71,7 @@ public class UserPref {
     public void setLevel(Context context, int level) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor editor = pref.edit();
-        editor.putInt(TAKE_DAYS, level);
+        editor.putInt(LEVEL, level);
         editor.commit();
     }
 
@@ -78,15 +82,42 @@ public class UserPref {
         editor.commit();
     }
 
+    public void setDoneChapters(Context context, int doneChapters) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt(DONE_CHAPTERS, doneChapters);
+        editor.commit();
+    }
+
+    public void setIsStarted(Context context, boolean isStarted) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putBoolean(IS_STARTED, isStarted);
+        editor.commit();
+    }
+
+    public void setCurrentSprintId(Context context, int sprintId) {
+        Log.d("setCurrentSprintId", String.valueOf(sprintId));
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putInt(CURRENT_SPRINT_ID, sprintId);
+        editor.commit();
+    }
+
     public void addEXP(Context context, int point) {
         int exp = getEXP(context);
         int level = getLevel(context);
         exp += point;
         while (exp >= level * 500) {
             exp -= level * 500;
-            setLevel(context, level+1);
+            levelUp(context, level);
         }
         setEXP(context, exp);
+    }
+
+    private void levelUp(Context context, int level) {
+        level ++;
+        setLevel(context, level);
     }
 
     public int setRandomEXP(int readNumber) {
@@ -137,14 +168,14 @@ public class UserPref {
         return pref.getInt(TAKE_DAYS, 0);
     }
 
-    public int getStartDate(Context context) {
+    public long getStartDate(Context context) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-        return pref.getInt(START_DATE, 0);
+        return pref.getLong(START_DATE, 0);
     }
 
     public int getLevel(Context context) {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-        return pref.getInt(LEVEL, 0);
+        return pref.getInt(LEVEL, 1);
     }
 
     public int getEXP(Context context) {
@@ -152,4 +183,19 @@ public class UserPref {
         return pref.getInt(EXP, 0);
     }
 
+    public int getDoneChapters(Context context) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        return pref.getInt(DONE_CHAPTERS, 0);
+    }
+
+    public boolean getIsStarted(Context context) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        return pref.getBoolean(IS_STARTED, false);
+    }
+
+    public int getCurrentSprintId(Context context) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        return pref.getInt(CURRENT_SPRINT_ID, 1000);
+    }
 }
+

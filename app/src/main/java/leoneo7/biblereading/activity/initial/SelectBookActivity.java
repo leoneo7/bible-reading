@@ -12,6 +12,7 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import leoneo7.biblereading.R;
 import leoneo7.biblereading.UserPref;
+import leoneo7.biblereading.activity.main.ProgressActivity;
 
 /**
  * Created by ryouken on 2016/09/13.
@@ -19,8 +20,10 @@ import leoneo7.biblereading.UserPref;
 public class SelectBookActivity extends Activity {
     @BindView(R.id.book_message)
     TextView mMessage;
+
     @BindView(R.id.new_button)
     BootstrapButton mNewButton;
+
     @BindView(R.id.both_button)
     BootstrapButton mBothButton;
 
@@ -30,6 +33,16 @@ public class SelectBookActivity extends Activity {
         setContentView(R.layout.initial_select_book);
 
         ButterKnife.bind(this);
+        isStarted();
+    }
+
+    private void isStarted() {
+        boolean isStarted = UserPref.getInstance().getIsStarted(this);
+        if (isStarted) {
+            Intent intent = new Intent(this, ProgressActivity.class);
+            finish();
+            startActivity(intent);
+        }
     }
 
     @OnClick(R.id.new_button)

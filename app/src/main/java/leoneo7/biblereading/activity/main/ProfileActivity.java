@@ -1,6 +1,5 @@
-package leoneo7.biblereading.activity.menu;
+package leoneo7.biblereading.activity.main;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -8,26 +7,20 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.beardedhen.androidbootstrap.BootstrapButton;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import leoneo7.biblereading.R;
-import leoneo7.biblereading.UserPref;
-import leoneo7.biblereading.activity.initial.SelectBookActivity;
-import leoneo7.biblereading.activity.main.HistoryActivity;
-import leoneo7.biblereading.activity.main.ProgressActivity;
+import leoneo7.biblereading.activity.menu.AboutAppActivity;
+import leoneo7.biblereading.activity.menu.SettingActivity;
 
 /**
- * Created by ryouken on 2016/09/25.
+ * Created by ryouken on 2016/10/01.
  */
-public class SettingActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     @BindView(R.id.navigation_view)
     NavigationView mNavigationView;
@@ -38,35 +31,14 @@ public class SettingActivity extends AppCompatActivity {
     @BindView(R.id.tool_bar)
     Toolbar mToolBar;
 
-    @BindView(R.id.restart_button)
-    BootstrapButton mRestartButton;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.menu_setting);
+        setContentView(R.layout.main_profile);
         ButterKnife.bind(this);
 
         onClickMenu();
         setupToolBar();
-    }
-
-    @OnClick(R.id.restart_button)
-    public void clickRestartButton() {
-        new AlertDialog.Builder(this)
-                .setTitle(R.string.restart_confirm)
-                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                        UserPref.getInstance().setIsStarted(getApplicationContext(), false);
-                        Intent intent = new Intent(SettingActivity.this, SelectBookActivity.class);
-                        startActivity(intent);
-                    }
-                })
-                .setNegativeButton("キャンセル", new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int whichButton) {
-                    }
-                })
-                .show();
     }
 
     private void setupToolBar() {
@@ -98,15 +70,15 @@ public class SettingActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(MenuItem menuItem) {
                 switch (menuItem.getItemId()) {
                     case R.id.menu_home:
-                        Intent intent_progress = new Intent(SettingActivity.this, ProgressActivity.class);
+                        Intent intent_progress = new Intent(ProfileActivity.this, ProgressActivity.class);
                         startActivity(intent_progress);
                         break;
 //                    case R.id.menu_profile:
-//                        Intent intent_profile = new Intent(SettingActivity.this, ProfileActivity.class);
+//                        Intent intent_profile = new Intent(ProfileActivity.this, ProfileActivity.class);
 //                        startActivity(intent_profile);
 //                        break;
                     case R.id.menu_history:
-                        Intent intent_history = new Intent(SettingActivity.this, HistoryActivity.class);
+                        Intent intent_history = new Intent(ProfileActivity.this, HistoryActivity.class);
                         startActivity(intent_history);
                         break;
 //                    case R.id.menu_ranking:
@@ -116,7 +88,7 @@ public class SettingActivity extends AppCompatActivity {
 //                        startActivity(intent_notification);
 //                        break;
                     case R.id.menu_about:
-                        Intent intent_about = new Intent(SettingActivity.this, AboutAppActivity.class);
+                        Intent intent_about = new Intent(ProfileActivity.this, AboutAppActivity.class);
                         startActivity(intent_about);
                         break;
 //                    case R.id.menu_help:
@@ -124,7 +96,7 @@ public class SettingActivity extends AppCompatActivity {
 //                        startActivity(intent_help);
 //                        break;
                     case R.id.menu_setting:
-                        Intent intent_setting = new Intent(SettingActivity.this, SettingActivity.class);
+                        Intent intent_setting = new Intent(ProfileActivity.this, SettingActivity.class);
                         startActivity(intent_setting);
                         break;
                     default:
@@ -135,3 +107,4 @@ public class SettingActivity extends AppCompatActivity {
         });
     }
 }
+

@@ -10,8 +10,8 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-import leoneo7.biblereading.ReadLog;
 import leoneo7.biblereading.R;
+import leoneo7.biblereading.ReadLog;
 
 /**
  * Created by ryouken on 2016/09/24.
@@ -57,7 +57,7 @@ public class LogAdapter extends BaseAdapter {
         String date = String.format("%d月%d日%s", month+1, day, week_day_string[week_day-1]);
         String chapters = String.valueOf(mReadLogList.get(position).getChapters()) + "章";
 
-        ((TextView)convertView.findViewById(R.id.date)).setText(date);
+        ((TextView)convertView.findViewById(R.id.logDate)).setText(date);
         ((TextView)convertView.findViewById(R.id.chapters)).setText(chapters);
 
         return convertView;
